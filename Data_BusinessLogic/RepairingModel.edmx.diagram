@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="569c93db846c4e2486d1cd4ca04162fd" Name="Diagram1">
+        <EntityTypeShape EntityType="HomeTechRepair.Comments" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeTechRepair.HomeTechModel" Width="1.5" PointX="6" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeTechRepair.HomeTechType" Width="1.5" PointX="6" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeTechRepair.RepairParts" Width="1.5" PointX="6" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeTechRepair.ReqStatusType" Width="1.5" PointX="6" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeTechRepair.Requests" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeTechRepair.Users" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeTechRepair.UserType" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="HomeTechRepair.FK__Comments__master__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="HomeTechRepair.FK__Comments__reques__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="HomeTechRepair.FK__Requests__homeTe__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="HomeTechRepair.FK__Requests__homeTe__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="HomeTechRepair.FK__Requests__repair__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="HomeTechRepair.FK__Requests__status__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="HomeTechRepair.FK__Requests__client__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="HomeTechRepair.FK__Requests__master__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="HomeTechRepair.FK__Users__userType__412EB0B6" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
