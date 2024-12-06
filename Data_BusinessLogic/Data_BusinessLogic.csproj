@@ -65,9 +65,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DB\Comments.cs" />
+    <Compile Include="DB\HomeTechModel.cs" />
+    <Compile Include="DB\HomeTechType.cs" />
+    <Compile Include="DB\Interface\IComments.cs" />
+    <Compile Include="DB\Interface\IHomeTechModel.cs" />
+    <Compile Include="DB\Interface\IHomeTechType.cs" />
+    <Compile Include="DB\Interface\IRepairParts.cs" />
+    <Compile Include="DB\Interface\IReqStatusType.cs" />
+    <Compile Include="DB\Interface\IRequest.cs" />
     <Compile Include="DB\Interface\IUser.cs" />
+    <Compile Include="DB\Interface\IUserType.cs" />
+    <Compile Include="DB\RepairParts.cs" />
+    <Compile Include="DB\ReqStatusType.cs" />
     <Compile Include="DB\Request.cs" />
     <Compile Include="DB\User.cs" />
+    <Compile Include="DB\UserType.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="UserControl\LogInPanel.xaml.cs">
       <DependentUpon>LogInPanel.xaml</DependentUpon>

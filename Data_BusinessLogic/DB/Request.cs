@@ -1,40 +1,141 @@
-﻿using System;
+﻿using Data_BusinessLogic.DB.Interface;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Data_BusinessLogic.DB
 {
-    public class Request
+    public class Request : IRequest, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public int Id { get; private set; }
 
+        private DateTime startDate;
         [Required]
-        public DateTime StartDate { get; set; }
+        [JsonPropertyName("startDate")]
+        public DateTime StartDate
+        {
+            get => startDate;
+            set
+            {
+                startDate = value;
+                OnPropertyChanged(nameof(StartDate));
+            }
+        }
 
+        private string problemDescription;
+        [Required]
         [MaxLength(2048)]
-        public string ProblemDescription { get; set; }
+        [JsonPropertyName("problemDescription")]
+        public string ProblemDescription
+        {
+            get => problemDescription;
+            set
+            {
+                problemDescription = value;
+                OnPropertyChanged(nameof(ProblemDescription));
+            }
+        }
 
-        public DateTime? CompletionDate { get; set; }
+        private DateTime? completionDate;
+        [JsonPropertyName("completionDate")]
+        public DateTime? CompletionDate
+        {
+            get => completionDate;
+            set
+            {
+                completionDate = value;
+                OnPropertyChanged(nameof(CompletionDate));
+            }
+        }
 
+        private int homeTechTypeId;
         [Required]
-        public int HomeTechTypeId { get; set; }
+        [JsonPropertyName("homeTechTypeId")]
+        public int HomeTechTypeId
+        {
+            get => homeTechTypeId;
+            set
+            {
+                homeTechTypeId = value;
+                OnPropertyChanged(nameof(HomeTechTypeId));
+            }
+        }
 
-        public int? HomeTechModelId { get; set; }
+        private int? homeTechModelId;
+        [JsonPropertyName("homeTechModelId")]
+        public int? HomeTechModelId
+        {
+            get => homeTechModelId;
+            set
+            {
+                homeTechModelId = value;
+                OnPropertyChanged(nameof(HomeTechModelId));
+            }
+        }
 
-        public int? RepairPartsId { get; set; }
+        private int? repairPartsId;
+        [JsonPropertyName("repairPartsId")]
+        public int? RepairPartsId
+        {
+            get => repairPartsId;
+            set
+            {
+                repairPartsId = value;
+                OnPropertyChanged(nameof(RepairPartsId));
+            }
+        }
 
+        private int clientId;
         [Required]
-        public int ClientId { get; set; }
+        [JsonPropertyName("clientId")]
+        public int ClientId
+        {
+            get => clientId;
+            set
+            {
+                clientId = value;
+                OnPropertyChanged(nameof(ClientId));
+            }
+        }
 
-        public int? MasterId { get; set; }
+        private int? masterId;
+        [JsonPropertyName("masterId")]
+        public int? MasterId
+        {
+            get => masterId;
+            set
+            {
+                masterId = value;
+                OnPropertyChanged(nameof(MasterId));
+            }
+        }
 
+        private int statusId;
         [Required]
-        public int StatusId { get; set; }
+        [JsonPropertyName("statusId")]
+        public int StatusId
+        {
+            get => statusId;
+            set
+            {
+                statusId = value;
+                OnPropertyChanged(nameof(StatusId));
+            }
+        }
 
-        // Бизнес-логика
+        [JsonIgnore]
         public bool IsCompleted => CompletionDate.HasValue;
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

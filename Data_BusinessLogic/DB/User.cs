@@ -6,30 +6,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json.Serialization;
+using Data_BusinessLogic.DB.Interface;
 
 namespace Data_BusinessLogic.DB
 {
-    public class User : Interface.IUser, INotifyPropertyChanged
+    public class User : IUser, INotifyPropertyChanged
     {
-        private int id;
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public int Id { get; private set; }
+
         private string login;
-        private string password;
-        private long phone;
-
-        [JsonPropertyName("id")]
-        public int Id
-        {
-            get => id;
-            private set
-            {
-                id = value;
-                OnPropertyChanged(nameof(Id));
-            }
-        }
-
-        [JsonPropertyName("login")]
         [Required]
         [MaxLength(125)]
+        [JsonPropertyName("login")]
         public string Login
         {
             get => login;
@@ -40,11 +30,12 @@ namespace Data_BusinessLogic.DB
             }
         }
 
-        [JsonIgnore]
+        private string password;
         [Required]
         [MaxLength(50)]
-        public string Password 
-        { 
+        [JsonIgnore] // Не сериализуем пароль для безопасности
+        public string Password
+        {
             get => password;
             set
             {
@@ -53,33 +44,80 @@ namespace Data_BusinessLogic.DB
             }
         }
 
+        private long phone;
+        [Required]
         [JsonPropertyName("phone")]
-        [Required]
-        public long Phone { get => phone; set => phone = value; }
-
-        [Required]
-        [MaxLength(256)]
-        public string Name { get; set; }
-
-        [MaxLength(256)]
-        public string Surname { get; set; }
-
-        [MaxLength(256)]
-        public string LastName { get; set; }
-
-        [Required]
-        public int UserTypeId { get; set; }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        // Бизнес-логика
-        public bool ValidatePassword(string password)
+        public long Phone
         {
-            return password == Password;
+            get => phone;
+            set
+            {
+                phone = value;
+                OnPropertyChanged(nameof(Phone));
+            }
         }
+
+        private string name;
+        [Required]
+        [MaxLength(256)]
+        [JsonPropertyName("name")]
+        public string Name
+        {
+            get => name;
+            set
+            {
+                name = value;
+                OnPropertyChanged(nameof(Name));
+            }
+        }
+
+        private string surname;
+        [MaxLength(256)]
+        [JsonPropertyName("surname")]
+        public string Surname
+        {
+            get => surname;
+            set
+            {
+                surname = value;
+                OnPropertyChanged(nameof(Surname));
+            }
+        }
+
+        private string lastName;
+        [MaxLength(256)]
+        [JsonPropertyName("lastName")]
+        public string LastName
+        {
+            get => lastName;
+            set
+            {
+                lastName = value;
+                OnPropertyChanged(nameof(LastName));
+            }
+        }
+
+        private int userTypeId;
+        [Required]
+        [JsonPropertyName("userTypeId")]
+        public int UserTypeId
+        {
+            get => userTypeId;
+            set
+            {
+                userTypeId = value;
+                OnPropertyChanged(nameof(UserTypeId));
+            }
+        }
+
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public bool ValidatePassword(string password)
+        {
+            return password == Password;
         }
     }
 }
