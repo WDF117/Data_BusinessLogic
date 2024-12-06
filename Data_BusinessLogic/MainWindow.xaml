@@ -6,7 +6,26 @@
         xmlns:local="clr-namespace:Data_BusinessLogic"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Background="RoyalBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <Frame Grid.Row="1" Grid.ColumnSpan="4">
+            <Frame.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Cyan" Offset="0"/>
+                    <GradientStop Color="WhiteSmoke" Offset="0.375"/>
+                    <GradientStop Color="Aquamarine" Offset="0.75"/>
+                </LinearGradientBrush>
+            </Frame.Background>
+        </Frame>
     </Grid>
 </Window>
