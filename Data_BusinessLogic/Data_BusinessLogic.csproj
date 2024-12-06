@@ -46,6 +46,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Text.Json, Version=8.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -64,45 +65,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Comments.cs">
-      <DependentUpon>RepairingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HomeTechModel.cs">
-      <DependentUpon>RepairingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HomeTechType.cs">
-      <DependentUpon>RepairingModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="DB\Interface\IUser.cs" />
+    <Compile Include="DB\Request.cs" />
+    <Compile Include="DB\User.cs" />
     <Compile Include="Manager.cs" />
-    <Compile Include="RepairingModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RepairingModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RepairingModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RepairingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RepairingModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RepairingModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="RepairParts.cs">
-      <DependentUpon>RepairingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ReqStatusType.cs">
-      <DependentUpon>RepairingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Requests.cs">
-      <DependentUpon>RepairingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Users.cs">
-      <DependentUpon>RepairingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserType.cs">
-      <DependentUpon>RepairingModel.tt</DependentUpon>
+    <Compile Include="UserControl\LogInPanel.xaml.cs">
+      <DependentUpon>LogInPanel.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -116,6 +84,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControl\LogInPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -140,28 +112,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <EntityDeploy Include="RepairingModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>RepairingModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="RepairingModel.edmx.diagram">
-      <DependentUpon>RepairingModel.edmx</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="RepairingModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RepairingModel.edmx</DependentUpon>
-      <LastGenOutput>RepairingModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="RepairingModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RepairingModel.edmx</DependentUpon>
-      <LastGenOutput>RepairingModel.cs</LastGenOutput>
-    </Content>
     <Content Include="SQLQuery\PZ_17 DB.sql" />
     <Content Include="SQLQuery\PZ_17 DB_see.sql" />
     <Content Include="SQLQuery\PZ_17DB-Values.sql" />

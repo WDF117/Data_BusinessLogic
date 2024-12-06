@@ -6,7 +6,14 @@
         xmlns:local="clr-namespace:Data_BusinessLogic"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Background="RoyalBlue">
+    <Grid >
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="RoyalBlue" Offset="0"/>
+                <GradientStop Color="LightBlue" Offset="0.375"/>
+                <GradientStop Color="DarkBlue" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -22,10 +29,12 @@
             <Frame.Background>
                 <LinearGradientBrush>
                     <GradientStop Color="Cyan" Offset="0"/>
-                    <GradientStop Color="WhiteSmoke" Offset="0.375"/>
-                    <GradientStop Color="Aquamarine" Offset="0.75"/>
+                    <GradientStop Color="WhiteSmoke" Offset="0.3"/>
+                    <GradientStop Color="WhiteSmoke" Offset="0.60"/>
+                    <GradientStop Color="Aquamarine" Offset="0.99"/>
                 </LinearGradientBrush>
             </Frame.Background>
         </Frame>
+        <Button Grid.Column="3" Grid.Row="2" Margin="25,0,25,0" MaxWidth="75" MinWidth="50" MinHeight="25"/>
     </Grid>
 </Window>
