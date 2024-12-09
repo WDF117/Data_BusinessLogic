@@ -2,20 +2,58 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Data_BusinessLogic.DB
 {
-    public class Comments : IComments, INotifyPropertyChanged
+    public class Comments : BindableBase, IComments
     {
-        public int Id => throw new NotImplementedException();
+        private Guid _id = Guid.NewGuid();
+        private string _message;
+        private int _requestId;
+        private int _masterId;
+        public Guid Id => _id;
+        [Required]
+        [JsonPropertyName("message")]
+        public string Message
+        {
+            get => _message;
+            set
+            {
+                _message = value;
+                OnPropertyChanged(nameof(Message));
+            }
+        }
+        [Required]
+        [JsonPropertyName("requestId")]
+        public int RequestId
+        {
+            get => _requestId;
+            set
+            {
+                _requestId = value;
+                OnPropertyChanged(nameof(RequestId));
+            }
+        }
+        [Required]
+        [JsonPropertyName("masterId")]
+        public int MasterId
+        {
+            get => _masterId;
+            set 
+            {
+                _masterId = value;
+                OnPropertyChanged(nameof(MasterId)); 
+            }
+        }
 
-        public string Message { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int RequestId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int MasterId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+        
     }
 }

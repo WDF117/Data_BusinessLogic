@@ -8,7 +8,7 @@ namespace Data_BusinessLogic.DB.Interface
 {
     public interface IComments
     {
-        int Id { get; }
+        Guid Id { get; }
         string Message { get; set; }
         int RequestId { get; set; }
         int MasterId { get; set; }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Data_BusinessLogic.DB
 {
-    public class HomeTechType : IHomeTechType, INotifyPropertyChanged
+    public class HomeTechType : BindableBase, IHomeTechType
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

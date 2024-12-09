@@ -10,9 +10,8 @@ using System.Threading.Tasks;
 
 namespace Data_BusinessLogic.DB
 {
-    public class Request : IRequest, INotifyPropertyChanged
+    public class Request : BindableBase, IRequest
     {
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public int Id { get; private set; }
 
@@ -132,10 +131,5 @@ namespace Data_BusinessLogic.DB
 
         [JsonIgnore]
         public bool IsCompleted => CompletionDate.HasValue;
-
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

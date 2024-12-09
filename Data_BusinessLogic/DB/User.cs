@@ -10,10 +10,8 @@ using Data_BusinessLogic.DB.Interface;
 
 namespace Data_BusinessLogic.DB
 {
-    public class User : IUser, INotifyPropertyChanged
+    public class User : BindableBase, IUser
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public int Id { get; private set; }
 
         private string login;
@@ -108,11 +106,6 @@ namespace Data_BusinessLogic.DB
                 userTypeId = value;
                 OnPropertyChanged(nameof(UserTypeId));
             }
-        }
-
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public bool ValidatePassword(string password)

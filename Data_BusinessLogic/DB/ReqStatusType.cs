@@ -9,9 +9,8 @@ using System.Threading.Tasks;
 
 namespace Data_BusinessLogic.DB.Interface
 {
-    public class ReqStatusType : IReqStatusType, INotifyPropertyChanged
+    public class ReqStatusType : BindableBase, IReqStatusType
     {
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public int Id { get; private set; }
 
@@ -27,11 +26,6 @@ namespace Data_BusinessLogic.DB.Interface
                 name = value;
                 OnPropertyChanged(nameof(Name));
             }
-        }
-
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -10,10 +10,8 @@ using System.Threading.Tasks;
 
 namespace Data_BusinessLogic.DB
 {
-    public class UserType : IUserType, INotifyPropertyChanged
+    public class UserType : BindableBase, IUserType
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public int Id { get; private set; }
 
         private string role;
@@ -28,11 +26,6 @@ namespace Data_BusinessLogic.DB
                 role = value;
                 OnPropertyChanged(nameof(Role));
             }
-        }
-
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -10,9 +10,8 @@ using System.Threading.Tasks;
 
 namespace Data_BusinessLogic.DB
 {
-    public class RepairParts : IRepairParts, INotifyPropertyChanged
+    public class RepairParts : BindableBase, IRepairParts
     {
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public int Id { get; private set; }
 
@@ -41,11 +40,6 @@ namespace Data_BusinessLogic.DB
                 price = value;
                 OnPropertyChanged(nameof(Price));
             }
-        }
-
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
