@@ -131,5 +131,13 @@ namespace Data_BusinessLogic.DB
 
         [JsonIgnore]
         public bool IsCompleted => CompletionDate.HasValue;
+        public HomeTechType HomeTechType { get; set; }
+        public HomeTechModel HomeTechModel { get; set; }
+        public RepairParts RepairParts { get; set; }
+        public User Client { get; set; }
+        public User Master { get; set; }
+        public ReqStatusType Status { get; set; }
+
+        public ICollection<Comments> Comments { get; set; } = new List<Comments>();
     }
 }

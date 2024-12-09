@@ -112,5 +112,6 @@ namespace Data_BusinessLogic.DB
         {
             return password == Password;
         }
+        public UserType Type { get; set; }
     }
 }

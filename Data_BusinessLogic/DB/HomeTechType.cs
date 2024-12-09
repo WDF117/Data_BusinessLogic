@@ -12,7 +12,6 @@ namespace Data_BusinessLogic.DB
 {
     public class HomeTechType : BindableBase, IHomeTechType
     {
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public int Id { get; private set; }
 
@@ -28,11 +27,6 @@ namespace Data_BusinessLogic.DB
                 name = value;
                 OnPropertyChanged(nameof(Name));
             }
-        }
-
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

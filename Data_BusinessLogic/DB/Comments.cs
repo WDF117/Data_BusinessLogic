@@ -54,6 +54,7 @@ namespace Data_BusinessLogic.DB
             }
         }
 
-        
+        public Request Request { get; set; }
+        public User Master { get; set; }
     }
 }
