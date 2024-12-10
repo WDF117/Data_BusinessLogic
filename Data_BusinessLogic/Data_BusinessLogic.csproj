@@ -226,6 +226,12 @@
     <Compile Include="UserControl\CommentView.xaml.cs">
       <DependentUpon>CommentView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\HomeTechModelView.xaml.cs">
+      <DependentUpon>HomeTechModelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\HomeTechTypeView.xaml.cs">
+      <DependentUpon>HomeTechTypeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -240,6 +246,9 @@
     </Compile>
     <Compile Include="UserControl\RequestsList.xaml.cs">
       <DependentUpon>RequestsList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\TypeAddEdPage.xaml.cs">
+      <DependentUpon>TypeAddEdPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControl\UserAddEdPage.xaml.cs">
       <DependentUpon>UserAddEdPage.xaml</DependentUpon>
@@ -268,6 +277,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControl\HomeTechModelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\HomeTechTypeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControl\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -285,6 +302,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControl\RequestsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\TypeAddEdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
