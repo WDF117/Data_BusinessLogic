@@ -6,6 +6,12 @@
         xmlns:local="clr-namespace:Data_BusinessLogic"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        
+    </Window.Resources>
+    <Window.DataContext>
+        <local:Manager/>
+    </Window.DataContext>
     <Grid >
         <Grid.Background>
             <LinearGradientBrush>
@@ -23,9 +29,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
-        <Frame Grid.Row="1" Grid.ColumnSpan="4">
+        <Frame Grid.Row="1" Grid.ColumnSpan="4" NavigationUIVisibility="Hidden">
             <Frame.Background>
                 <LinearGradientBrush>
                     <GradientStop Color="Cyan" Offset="0"/>
@@ -35,6 +40,5 @@
                 </LinearGradientBrush>
             </Frame.Background>
         </Frame>
-        <Button Grid.Column="3" Grid.Row="2" Margin="25,0,25,0" MaxWidth="75" MinWidth="50" MinHeight="25"/>
     </Grid>
 </Window>
