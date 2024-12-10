@@ -34,8 +34,8 @@
             <Frame.Background>
                 <LinearGradientBrush>
                     <GradientStop Color="Cyan" Offset="0"/>
-                    <GradientStop Color="WhiteSmoke" Offset="0.3"/>
-                    <GradientStop Color="WhiteSmoke" Offset="0.60"/>
+                    <GradientStop Color="WhiteSmoke" Offset="0.2"/>
+                    <GradientStop Color="WhiteSmoke" Offset="0.70"/>
                     <GradientStop Color="Aquamarine" Offset="0.99"/>
                 </LinearGradientBrush>
             </Frame.Background>
