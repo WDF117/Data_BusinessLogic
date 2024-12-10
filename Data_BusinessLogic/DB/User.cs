@@ -12,7 +12,7 @@ namespace Data_BusinessLogic.DB
 {
     public class User : BindableBase, IUser
     {
-        public int Id { get; private set; }
+        public Guid Id { get; private set; }
 
         private string login;
         [Required]
@@ -95,10 +95,10 @@ namespace Data_BusinessLogic.DB
             }
         }
 
-        private int userTypeId;
+        private Guid userTypeId;
         [Required]
         [JsonPropertyName("userTypeId")]
-        public int UserTypeId
+        public Guid UserTypeId
         {
             get => userTypeId;
             set

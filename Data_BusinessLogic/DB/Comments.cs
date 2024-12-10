@@ -15,11 +15,10 @@ namespace Data_BusinessLogic.DB
 {
     public class Comments : BindableBase, IComments
     {
-        private Guid _id = Guid.NewGuid();
         private string _message;
         private int _requestId;
         private int _masterId;
-        public Guid Id => _id;
+        public Guid Id { get; private set; }
         [Required]
         [JsonPropertyName("message")]
         public string Message

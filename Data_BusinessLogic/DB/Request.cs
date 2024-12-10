@@ -12,8 +12,7 @@ namespace Data_BusinessLogic.DB
 {
     public class Request : BindableBase, IRequest
     {
-
-        public int Id { get; private set; }
+        public Guid Id { get; private set; }
 
         private DateTime startDate;
         [Required]

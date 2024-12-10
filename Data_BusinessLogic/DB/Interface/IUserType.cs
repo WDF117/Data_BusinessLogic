@@ -8,7 +8,7 @@ namespace Data_BusinessLogic.DB.Interface
 {
     public interface IUserType
     {
-        int Id { get; }
+        Guid Id { get; }
         string Role { get; set; }
     }
 }

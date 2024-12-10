@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Data_BusinessLogic.UserControl
 {
     /// <summary>
-    /// Логика взаимодействия для LogInPanel.xaml
+    /// Логика взаимодействия для LoginView.xaml
     /// </summary>
-    public partial class LogInPanel : Page
+    public partial class LoginView : Page
     {
-        public LogInPanel()
+        public LoginView()
         {
             InitializeComponent();
         }

@@ -8,7 +8,7 @@ namespace Data_BusinessLogic.DB.Interface
 {
     public interface IRepairParts
     {
-        int Id { get; }
+        Guid Id { get; }
         string Name { get; set; }
         int Price { get; set; }
     }

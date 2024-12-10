@@ -12,7 +12,7 @@ namespace Data_BusinessLogic.DB
 {
     public class UserType : BindableBase, IUserType
     {
-        public int Id { get; private set; }
+        public Guid Id { get; private set; }
 
         private string role;
         [Required]

@@ -11,8 +11,7 @@ namespace Data_BusinessLogic.DB.Interface
 {
     public class ReqStatusType : BindableBase, IReqStatusType
     {
-
-        public int Id { get; private set; }
+        public Guid Id { get; private set; }
 
         private string name;
         [Required]

@@ -13,7 +13,7 @@ namespace Data_BusinessLogic.DB
     public class HomeTechType : BindableBase, IHomeTechType
     {
 
-        public int Id { get; private set; }
+        public Guid Id { get; private set; }
 
         private string name;
         [Required]

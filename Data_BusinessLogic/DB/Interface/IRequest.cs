@@ -8,7 +8,7 @@ namespace Data_BusinessLogic.DB.Interface
 {
     public interface IRequest
     {
-        int Id { get; }
+        Guid Id { get; }
         DateTime StartDate { get; set; }
         string ProblemDescription { get; set; }
         DateTime? CompletionDate { get; set; }
