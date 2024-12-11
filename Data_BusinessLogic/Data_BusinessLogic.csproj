@@ -256,6 +256,11 @@
     <Compile Include="UserControl\UserListPage.xaml.cs">
       <DependentUpon>UserListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\ViewModels\AddEditRequestViewModel.cs" />
+    <Compile Include="UserControl\ViewModels\AddEditUser.cs" />
+    <Compile Include="UserControl\ViewModels\PartsListViewModel.cs" />
+    <Compile Include="UserControl\ViewModels\RequestListViewModel.cs" />
+    <Compile Include="UserControl\ViewModels\UserListViewModel.cs" />
     <Compile Include="ValidableBindableBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
