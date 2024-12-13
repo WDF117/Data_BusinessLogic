@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="21a33b49787f460ead2919b262c9abc9" Name="Diagram1">
+      <Diagram DiagramId="fb5f642137964e24889794fbea896349" Name="Diagram1">
         <EntityTypeShape EntityType="RepairDBModel.Comments" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RepairDBModel.HomeTechModel" Width="1.75" PointX="11" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RepairDBModel.HomeTechType" Width="1.5" PointX="8" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="RepairDBModel.RepairParts" Width="1.5" PointX="11.125" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="RepairDBModel.ReqStatusType" Width="1.5" PointX="0.625" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="RepairDBModel.HomeTechModel" Width="1.5" PointX="6" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RepairDBModel.HomeTechType" Width="1.5" PointX="6" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RepairDBModel.RepairParts" Width="1.5" PointX="6" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RepairDBModel.ReqStatusType" Width="1.5" PointX="6" PointY="14.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RepairDBModel.Requests" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="RepairDBModel.Users" Width="1.5" PointX="2.875" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RepairDBModel.UserType" Width="1.5" PointX="0.625" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RepairDBModel.Users" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RepairDBModel.UserType" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
         <AssociationConnector Association="RepairDBModel.FK__Comments__master__4CA06362" ManuallyRouted="false" />
         <AssociationConnector Association="RepairDBModel.FK__Comments__reques__4BAC3F29" ManuallyRouted="false" />
         <AssociationConnector Association="RepairDBModel.FK__Requests__homeTe__44FF419A" ManuallyRouted="false" />

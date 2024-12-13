@@ -39,38 +39,9 @@ namespace Data_BusinessLogic
         //открывать список клиентов
         private void OnNavigation(string dest)
         {
-            switch (dest)
-            {
-                case "orderPrep":
-                    CurrentViewModel = _orderPrepViewModel; break;
-                case "customers":
-                default:
-                    CurrentViewModel = _customerListViewModel; break;
-            }
+            
         }
 
-        //открывать окно для редактирования клиента
-        private void NavigationToEditCustomer(Customer customer)
-        {
-            _addEditCustomerVewModel.IsEditeMode = true;
-            _addEditCustomerVewModel.SetCustomer(customer);
-            CurrentViewModel = _addEditCustomerVewModel;
-
-        }
-        private void NavigationToAddCustomer()
-        {
-            _addEditCustomerVewModel.IsEditeMode = false;
-            _addEditCustomerVewModel.SetCustomer(new Customer
-            {
-                Id = Guid.NewGuid(),
-            });
-            CurrentViewModel = _addEditCustomerVewModel;
-
-        }
-        private void NavigateToOrder(Customer customer)
-        {
-            _orderViewModel.Id = customer.Id;
-            CurrentViewModel = _orderViewModel;
-        }
+        
     }
 }
