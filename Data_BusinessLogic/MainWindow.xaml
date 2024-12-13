@@ -12,33 +12,38 @@
     <Window.DataContext>
         <local:Manager/>
     </Window.DataContext>
-    <Grid >
+    <Grid>
         <Grid.Background>
             <LinearGradientBrush>
-                <GradientStop Color="RoyalBlue" Offset="0"/>
-                <GradientStop Color="LightBlue" Offset="0.375"/>
-                <GradientStop Color="DarkBlue" Offset="0.75"/>
+                <GradientStop Color="Cyan" Offset="0"/>
+                <GradientStop Color="WhiteSmoke" Offset="0.2"/>
+                <GradientStop Color="WhiteSmoke" Offset="0.70"/>
+                <GradientStop Color="Aquamarine" Offset="0.99"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Frame Grid.Row="1" Grid.ColumnSpan="4" NavigationUIVisibility="Hidden">
-            <Frame.Background>
+        <Grid x:Name="NavigationBar" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.Background>
                 <LinearGradientBrush>
-                    <GradientStop Color="Cyan" Offset="0"/>
-                    <GradientStop Color="WhiteSmoke" Offset="0.2"/>
-                    <GradientStop Color="WhiteSmoke" Offset="0.70"/>
-                    <GradientStop Color="Aquamarine" Offset="0.99"/>
+                    <GradientStop Color="RoyalBlue" Offset="0"/>
+                    <GradientStop Color="LightBlue" Offset="0.375"/>
+                    <GradientStop Color="DarkBlue" Offset="0.75"/>
                 </LinearGradientBrush>
-            </Frame.Background>
-        </Frame>
+            </Grid.Background>
+            <Button Content="Пользователи"/>
+            <Button Content="Заявки" Grid.Column="1"/>
+            <Button Content="Запчасти" Grid.Column="2"/>
+        </Grid>
+        <Grid x:Name="ContentGrid" Grid.Row="1">
+            <ContentControl Content="{Binding CurrentViewModel}"/>
+        </Grid>
     </Grid>
 </Window>

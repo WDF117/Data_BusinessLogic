@@ -1,4 +1,4 @@
-USE PZ17_117
+USE RepairDB
 INSERT INTO [UserType] ([Role]) 
 VALUES 
 (N'Администратор'),

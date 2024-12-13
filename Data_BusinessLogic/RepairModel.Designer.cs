@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "E:\Practice\MDK0101_practice\PZ_DE\Data_BusinessLogic\RepairModel.edmx" включено. 
+﻿// Создание кода T4 для модели "F:\Practice\MDK0101_practice\PZ_DE\Data_BusinessLogic\RepairModel.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

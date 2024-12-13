@@ -23,6 +23,7 @@ namespace Data_BusinessLogic
         public MainWindow()
         {
             InitializeComponent();
+
         }
     }
 }

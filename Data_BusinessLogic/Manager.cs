@@ -5,23 +5,72 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using Data_BusinessLogic;
+using Data_BusinessLogic.Services;
+using Data_BusinessLogic.UserControl;
+using Data_BusinessLogic.UserControl.ViewModels;
 
 namespace Data_BusinessLogic
 {
-    public class Manager
+    public class Manager :BindableBase
     {
-        public static Frame MainFrame { get; set; }
-        public static void Navigate(Page page)
+        private AddEditRequestViewModel _addEditRequestViewModel;
+        private AddEditUserViewModel _addEditUser;
+        private CommentAdEdViewModel _commentAdEdViewModel;
+        private CommentViewModel _commentViewModel;
+        private PartsAddEdViewModel _partsAddEdViewModel;
+        private PartsListViewModel _partsListViewModel;
+        private RequestListViewModel _requestListViewModel;
+        private UserListViewModel _userListViewModel;
+        
+        public Manager()
         {
-            MainFrame.Navigate(page);
+            NavigationCommand = new RelayCommand<string>(OnNavigation);
+
+        }
+        private BindableBase _currentViewModel;
+        public BindableBase CurrentViewModel
+        {
+            get => _currentViewModel;
+            set => SetProperty(ref _currentViewModel, value);
         }
 
-        public static void GoBack()
+        public RelayCommand<string> NavigationCommand { get; private set; }
+
+        //открывать список клиентов
+        private void OnNavigation(string dest)
         {
-            if (MainFrame.CanGoBack)
+            switch (dest)
             {
-                MainFrame.GoBack();
+                case "orderPrep":
+                    CurrentViewModel = _orderPrepViewModel; break;
+                case "customers":
+                default:
+                    CurrentViewModel = _customerListViewModel; break;
             }
+        }
+
+        //открывать окно для редактирования клиента
+        private void NavigationToEditCustomer(Customer customer)
+        {
+            _addEditCustomerVewModel.IsEditeMode = true;
+            _addEditCustomerVewModel.SetCustomer(customer);
+            CurrentViewModel = _addEditCustomerVewModel;
+
+        }
+        private void NavigationToAddCustomer()
+        {
+            _addEditCustomerVewModel.IsEditeMode = false;
+            _addEditCustomerVewModel.SetCustomer(new Customer
+            {
+                Id = Guid.NewGuid(),
+            });
+            CurrentViewModel = _addEditCustomerVewModel;
+
+        }
+        private void NavigateToOrder(Customer customer)
+        {
+            _orderViewModel.Id = customer.Id;
+            CurrentViewModel = _orderViewModel;
         }
     }
 }

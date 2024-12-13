@@ -1,4 +1,4 @@
-USE PZ17_117
+USE RepairDB
 SELECT * FROM RepairParts
 SELECT * FROM Requests
 SELECT * FROM ReqStatusType
