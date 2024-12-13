@@ -279,6 +279,9 @@
     <Compile Include="UserControl\UserListPage.xaml.cs">
       <DependentUpon>UserListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\ValueAddEdPage.xaml.cs">
+      <DependentUpon>ValueAddEdPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\ViewModels\AddEditRequestViewModel.cs" />
     <Compile Include="UserControl\ViewModels\AddEditUserViewModel.cs" />
     <Compile Include="UserControl\ViewModels\CommentAdEdViewModel.cs" />
@@ -348,6 +351,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControl\UserListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\ValueAddEdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
