@@ -15,6 +15,9 @@ namespace Data_BusinessLogic.Services
         {
             _container = new UnityContainer();
 
+            _container.RegisterType<IRequestRepository, RequestRepository>(
+                new ContainerControlledLifetimeManager());
+
         }
         public static IUnityContainer Container { get { return _container; } }
     }

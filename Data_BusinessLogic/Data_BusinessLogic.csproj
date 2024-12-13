@@ -243,6 +243,7 @@
     </Compile>
     <Compile Include="Services\RepoContainer.cs" />
     <Compile Include="Services\RequestRepository.cs" />
+    <Compile Include="Services\UserRepository.cs" />
     <Compile Include="UserControl\CommentAdEdPage.xaml.cs">
       <DependentUpon>CommentAdEdPage.xaml</DependentUpon>
     </Compile>
