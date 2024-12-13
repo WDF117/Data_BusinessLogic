@@ -17,7 +17,7 @@ namespace Data_BusinessLogic.Converters
         {
             FalseVisibility = Visibility.Collapsed;
         }
-        #region IValieConverter
+        #region IValueConverter
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             bool bVal;

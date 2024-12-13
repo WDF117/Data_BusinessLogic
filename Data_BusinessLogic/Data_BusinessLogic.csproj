@@ -176,7 +176,6 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
-    <Reference Include="System.Text.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
@@ -190,6 +189,12 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="Unity.Abstractions, Version=5.11.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.10\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.11.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.10\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -200,26 +205,44 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BindableBase.cs" />
+    <Compile Include="Comments.cs">
+      <DependentUpon>RepairModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Converters\ValueToVisibility.cs" />
-    <Compile Include="DB\Comments.cs" />
-    <Compile Include="DB\RepairDBContext.cs" />
-    <Compile Include="DB\HomeTechModel.cs" />
-    <Compile Include="DB\HomeTechType.cs" />
-    <Compile Include="DB\Interface\IComments.cs" />
-    <Compile Include="DB\Interface\IHomeTechModel.cs" />
-    <Compile Include="DB\Interface\IHomeTechType.cs" />
-    <Compile Include="DB\Interface\IRepairParts.cs" />
-    <Compile Include="DB\Interface\IReqStatusType.cs" />
-    <Compile Include="DB\Interface\IRequest.cs" />
-    <Compile Include="DB\Interface\IUser.cs" />
-    <Compile Include="DB\Interface\IUserType.cs" />
-    <Compile Include="DB\RepairParts.cs" />
-    <Compile Include="DB\ReqStatusType.cs" />
-    <Compile Include="DB\Request.cs" />
-    <Compile Include="DB\User.cs" />
-    <Compile Include="DB\UserType.cs" />
+    <Compile Include="HomeTechModel.cs">
+      <DependentUpon>RepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HomeTechType.cs">
+      <DependentUpon>RepairModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Manager.cs" />
     <Compile Include="RelayCommand.cs" />
+    <Compile Include="RepairModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RepairModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RepairModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepairModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="RepairParts.cs">
+      <DependentUpon>RepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReqStatusType.cs">
+      <DependentUpon>RepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Requests.cs">
+      <DependentUpon>RepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Services\RepoContainer.cs" />
+    <Compile Include="Services\RequestRepository.cs" />
     <Compile Include="UserControl\CommentAdEdPage.xaml.cs">
       <DependentUpon>CommentAdEdPage.xaml</DependentUpon>
     </Compile>
@@ -261,6 +284,12 @@
     <Compile Include="UserControl\ViewModels\PartsListViewModel.cs" />
     <Compile Include="UserControl\ViewModels\RequestListViewModel.cs" />
     <Compile Include="UserControl\ViewModels\UserListViewModel.cs" />
+    <Compile Include="Users.cs">
+      <DependentUpon>RepairModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserType.cs">
+      <DependentUpon>RepairModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ValidableBindableBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -346,11 +375,28 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <EntityDeploy Include="RepairModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RepairModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="RepairModel.edmx.diagram">
+      <DependentUpon>RepairModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="RepairModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RepairModel.edmx</DependentUpon>
+      <LastGenOutput>RepairModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RepairModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RepairModel.edmx</DependentUpon>
+      <LastGenOutput>RepairModel.cs</LastGenOutput>
+    </Content>
     <Content Include="SQLQuery\PZ_17 DB.sql" />
     <Content Include="SQLQuery\PZ_17 DB_see.sql" />
     <Content Include="SQLQuery\PZ_17DB-Values.sql" />
