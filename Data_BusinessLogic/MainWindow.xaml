@@ -4,10 +4,44 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Data_BusinessLogic"
+        xmlns:views="clr-namespace:Data_BusinessLogic.UserControl"
+        xmlns:viewModels="clr-namespace:Data_BusinessLogic.UserControl.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
-        
+        <DataTemplate DataType="{x:Type viewModels:AddEditRequestViewModel}">
+            <views:RequestAddEdPage/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:AddEditUserViewModel}">
+            <views:UserAddEdPage/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:CommentAdEdViewModel}">
+            <views:CommentAdEdPage/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:CommentViewModel}">
+            <views:CommentView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:HomeTechModelViewModel}">
+            <views:HomeTechModelView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:HomeTechTypeViewModel}">
+            <views:HomeTechTypeView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:LoginViewModel}">
+            <views:LoginView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:PartsAddEdViewModel}">
+            <views:PartsAddEdPage/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:PartsListViewModel}">
+            <views:PartsList/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:RequestListViewModel}">
+            <views:RequestsList/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:UserListViewModel}">
+            <views:UserListPage/>
+        </DataTemplate>
     </Window.Resources>
     <Window.DataContext>
         <local:Manager/>
