@@ -15,9 +15,12 @@ namespace Data_BusinessLogic.Services
         {
             _container = new UnityContainer();
 
-            _container.RegisterType<IRequestRepository, RequestRepository>(
-                new ContainerControlledLifetimeManager());
-
+            _container.RegisterType<IRequestRepository, RequestRepository>(new ContainerControlledLifetimeManager());
+            _container.RegisterType<IUserRepository, UserRepository>(new ContainerControlledLifetimeManager());
+            _container.RegisterType<IPartsRepository, PartsRepository>(new ContainerControlledLifetimeManager());
+            _container.RegisterType<ICommentRepository, CommentRepository>(new ContainerControlledLifetimeManager());
+            _container.RegisterType<IHomeTechModelRepository, HomeTechModelRepository>(new ContainerControlledLifetimeManager());
+            _container.RegisterType<IHomeTechTypeRepository, HomeTechTypeRepository>(new ContainerControlledLifetimeManager());
         }
         public static IUnityContainer Container { get { return _container; } }
     }
