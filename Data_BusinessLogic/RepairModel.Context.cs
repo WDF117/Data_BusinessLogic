@@ -15,6 +15,7 @@ namespace Data_BusinessLogic
     
     public partial class RepairDBEntities : DbContext
     {
+        public static RepairDBEntities _context = new RepairDBEntities();
         public RepairDBEntities()
             : base("name=RepairDBEntities")
         {
