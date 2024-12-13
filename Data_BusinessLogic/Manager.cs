@@ -91,7 +91,7 @@ namespace Data_BusinessLogic
             CurrentViewModel = _addEditRequestViewModel;
         }
 
-        private void NavigateToEditRequest(Request request)
+        private void NavigateToEditRequest(Requests request)
         {
             _addEditRequestViewModel.IsEditMode = true;
             _addEditRequestViewModel.SetRequest(request);

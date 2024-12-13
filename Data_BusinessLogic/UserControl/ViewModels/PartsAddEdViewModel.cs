@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data_BusinessLogic.UserControl.ViewModels
 {
-    internal class PartsAddEdViewModel
+    internal class PartsAddEdViewModel : BindableBase
     {
     }
 }

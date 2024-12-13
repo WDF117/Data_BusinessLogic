@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Data_BusinessLogic.UserControl.ViewModels
 {
-    internal class CommentAdEdViewModel : BindableBase
+    internal class ValidableUser : ValidableBindableBase
     {
+
     }
 }
