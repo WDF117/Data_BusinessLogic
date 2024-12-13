@@ -243,6 +243,9 @@
     <Compile Include="Requests.cs">
       <DependentUpon>RepairModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Services\CommentRepository.cs" />
+    <Compile Include="Services\HomeTechModelRepository.cs" />
+    <Compile Include="Services\PartsRepository.cs" />
     <Compile Include="Services\RepoContainer.cs" />
     <Compile Include="Services\RequestRepository.cs" />
     <Compile Include="Services\UserRepository.cs" />
@@ -286,11 +289,14 @@
     <Compile Include="UserControl\ViewModels\AddEditUserViewModel.cs" />
     <Compile Include="UserControl\ViewModels\CommentAdEdViewModel.cs" />
     <Compile Include="UserControl\ViewModels\CommentViewModel.cs" />
+    <Compile Include="UserControl\ViewModels\HomeTechModelViewModel.cs" />
+    <Compile Include="UserControl\ViewModels\HomeTechTypeViewModel.cs" />
     <Compile Include="UserControl\ViewModels\LoginViewModel.cs" />
     <Compile Include="UserControl\ViewModels\PartsAddEdViewModel.cs" />
     <Compile Include="UserControl\ViewModels\PartsListViewModel.cs" />
     <Compile Include="UserControl\ViewModels\RequestListViewModel.cs" />
     <Compile Include="UserControl\ViewModels\UserListViewModel.cs" />
+    <Compile Include="UserControl\ViewModels\ValueAddEdViewModel.cs" />
     <Compile Include="Users.cs">
       <DependentUpon>RepairModel.tt</DependentUpon>
     </Compile>

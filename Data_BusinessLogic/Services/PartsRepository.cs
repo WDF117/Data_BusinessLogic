@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data_BusinessLogic.UserControl.ViewModels
+namespace Data_BusinessLogic.Services
 {
-    internal class AddEditRequestViewModel : BindableBase
+    internal class PartsRepository
     {
     }
 }
