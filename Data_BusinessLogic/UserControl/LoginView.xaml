@@ -3,12 +3,54 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
       xmlns:local="clr-namespace:Data_BusinessLogic.UserControl"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LoginView">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Width="300">
+            <TextBlock Text="Вход в систему"
+                       FontSize="20"
+                       FontWeight="Bold"
+                       Margin="0,0,0,20"
+                       HorizontalAlignment="Center"/>
+
+            <TextBox ToolTip="Логин"
+                     Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                     Margin="0,0,0,10"/>
+
+            <PasswordBox Margin="0,0,0,10">
+                <PasswordBox.Password>
+                    <Binding Path="Password" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"/>
+                </PasswordBox.Password>
+            </PasswordBox>
+
+            <TextBlock Text="{Binding ErrorMessage}"
+                       Foreground="Red"
+                       Visibility="{Binding IsErrorVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       Margin="0,0,0,10"/>
+
+            <Button Content="Войти"
+                    Command="{Binding LoginCommand}"
+                    IsEnabled="{Binding CanLogin}"
+                    HorizontalAlignment="Center"
+                    Width="100"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="10">
+            <TextBlock Text="Нет аккаунта?" Margin="0,0,5,0"/>
+            <Button Content="Регистрация" Command="{Binding RegisterCommand}" />
+        </StackPanel>
     </Grid>
 </Page>

@@ -3,12 +3,62 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
       xmlns:local="clr-namespace:Data_BusinessLogic.UserControl"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PartsList">
-
     <Grid>
-        
-    </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}"
+                     ToolTip="Введите название детали"
+                     Margin="0,0,10,0"/>
+
+                <Button Content="Очистить"
+                    Command="{Binding ClearFilterCommand}"
+                    Grid.Column="1"
+                    Margin="0,0,10,0"/>
+
+                <Button Content="Добавить деталь"
+                    Command="{Binding AddPartCommand}"
+                    Grid.Column="2"/>
+            </Grid>
+            <DataGrid ItemsSource="{Binding FilteredParts}"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  Grid.Row="1"
+                  Margin="5">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="*"/>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="2*"/>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding Price}" Width="*"/>
+                    <DataGridTemplateColumn Header="Действия" Width="2*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Content="Редактировать"
+                                        Command="{Binding DataContext.EditPartCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                        CommandParameter="{Binding}"
+                                        Margin="5,0"/>
+                                    <Button Content="Удалить"
+                                        Command="{Binding DataContext.DeletePartCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                        CommandParameter="{Binding}"
+                                        Margin="5,0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
 </Page>

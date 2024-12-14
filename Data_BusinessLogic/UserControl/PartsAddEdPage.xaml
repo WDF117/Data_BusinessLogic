@@ -9,6 +9,25 @@
       Title="PartsAddEdPage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Название детали" Margin="10,10,10,0"/>
+        <TextBox x:Name="NameTextBox" Grid.Row="1" Margin="10" Width="300" VerticalAlignment="Center"/>
+        <TextBlock Text="Цена" Grid.Row="2" Margin="10,10,10,0"/>
+        <TextBox x:Name="PriceTextBox" Grid.Row="3" Margin="10" Width="300" VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="4" Orientation="Vertical" HorizontalAlignment="Right" Margin="10">
+            <Button Content="Сохранить"
+                    Command="{Binding SaveCommand}"
+                    CommandParameter="{Binding}"
+                    Margin="5"/>
+            <Button Content="Отменить"
+                    Command="{Binding CancelCommand}"
+                    CommandParameter="{Binding}"
+                    Margin="5"/>
+        </StackPanel>
     </Grid>
 </Page>

@@ -24,16 +24,12 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-
-            <!-- Add Request Button -->
             <Button Content="Добавить запрос"
                     Command="{Binding AddRequestCommand}"
                     Grid.Column="0"
                     HorizontalAlignment="Left"
                     HorizontalContentAlignment="Center"
                     Width="150"/>
-
-            <!-- Search Section -->
             <StackPanel Orientation="Horizontal"
                         Grid.Column="1"
                         HorizontalAlignment="Right">
@@ -45,8 +41,6 @@
                         Command="{Binding ClearSearchInputCommand}"/>
             </StackPanel>
         </Grid>
-
-        <!-- DataGrid for Requests -->
         <DataGrid ItemsSource="{Binding Requests}"
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"

@@ -21,12 +21,13 @@ namespace Data_BusinessLogic
         private CommentViewModel _commentViewModel;
         private HomeTechModelViewModel _homeTechViewModel;
         private HomeTechTypeViewModel _homeTechTypeViewModel;
+        private HTMAddEdViewModel _htmaEdViewModel;
+        private HTTAddEdViewModel _httaEdViewModel;
         private LoginViewModel _loginViewModel;
         private PartsAddEdViewModel _partsAddEdViewModel;
         private PartsListViewModel _partsListViewModel;
         private RequestListViewModel _requestListViewModel;
         private UserListViewModel _userListViewModel;
-        private ValueAddEdViewModel _valueAddEdViewModel;
         
         public Manager()
         {
@@ -47,6 +48,14 @@ namespace Data_BusinessLogic
             _requestListViewModel.EditRequestRequested += NavigateToEditRequest;
             _userListViewModel.AddUserRequested += NavigateToAddUser;
             _userListViewModel.EditUserRequested += NavigateToEditUser;
+            _commentViewModel.AddCommentRequested += NavigateToAddComment;
+            _commentViewModel.EditCommentRequested += NavigateToEditComment;
+            _homeTechViewModel.AddHomeTechRequested += NavigateToAddHomeTechModel;
+            _homeTechViewModel.EditHomeTechRequested += NavigateToEditHomeTechModel;
+            _homeTechTypeViewModel.AddHomeTechTypeRequested += NavigateToAddHomeTechType;
+            _homeTechTypeViewModel.EditHomeTechTypeRequested += NavigateToEditHomeTechType;
+            _partsListViewModel.AddPartRequested += NavigateToAddPart;
+            _partsListViewModel.EditPartRequested += NavigateToEditPart;
         }
         private BindableBase _currentViewModel;
         public BindableBase CurrentViewModel
@@ -111,6 +120,58 @@ namespace Data_BusinessLogic
             _addEditUserViewModel.SetUser(user);
             CurrentViewModel = _addEditUserViewModel;
         }
+        private void NavigateToAddComment()
+        {
+            _commentAdEdViewModel.IsEditMode = false;
+            _commentAdEdViewModel.SetComment(new Comments());
+            CurrentViewModel = _commentAdEdViewModel;
+        }
 
+        private void NavigateToEditComment(Comments comment)
+        {
+            _commentAdEdViewModel.IsEditMode = true;
+            _commentAdEdViewModel.SetComment(comment);
+            CurrentViewModel = _commentAdEdViewModel;
+        }
+        private void NavigateToAddHomeTechModel()
+        {
+            _htmaEdViewModel.IsEditMode = false;
+            _htmaEdViewModel.SetHomeTechModel(new HomeTechModel());
+            CurrentViewModel = _htmaEdViewModel;
+        }
+
+        private void NavigateToEditHomeTechModel(HomeTechModel homeTechModel)
+        {
+            _htmaEdViewModel.IsEditMode = true;
+            _htmaEdViewModel.SetHomeTechModel(homeTechModel);
+            CurrentViewModel = _htmaEdViewModel;
+        }
+        private void NavigateToAddHomeTechType()
+        {
+            _httaEdViewModel.IsEditMode = false;
+            _httaEdViewModel.SetHomeTechType(new HomeTechType());
+            CurrentViewModel = _httaEdViewModel;
+        }
+
+        private void NavigateToEditHomeTechType(HomeTechType homeTechType)
+        {
+            _httaEdViewModel.IsEditMode = true;
+            _httaEdViewModel.SetHomeTechType(homeTechType);
+            CurrentViewModel = _httaEdViewModel;
+        }
+        private void NavigateToAddPart()
+        {
+            _partsAddEdViewModel.IsEditMode = false;
+            _partsAddEdViewModel.SetPart(new Parts());
+            CurrentViewModel = _partsAddEdViewModel;
+        }
+
+        private void NavigateToEditPart(Parts part)
+        {
+            _partsAddEdViewModel.IsEditMode = true;
+            _partsAddEdViewModel.SetPart(part);
+            CurrentViewModel = _partsAddEdViewModel;
+        }
     }
+}
 }

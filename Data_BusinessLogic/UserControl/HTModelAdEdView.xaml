@@ -3,12 +3,65 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
       xmlns:local="clr-namespace:Data_BusinessLogic.UserControl"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="HTModelAdEdView">
 
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadModelCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Форма редактирования модели техники -->
+        <Grid Name="ModelGrid" Grid.Row="0"
+              DataContext="{Binding CurrentModel}"
+              Margin="10"
+              HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Поле для ввода названия модели -->
+            <TextBlock Text="Название модели:" 
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Right"
+                       Margin="3"/>
+            <TextBox Text="{Binding Name, ValidatesOnNotifyDataErrors=True}" 
+                     Grid.Row="0"
+                     Grid.Column="1"
+                     MinWidth="200"
+                     Margin="3"/>
+
+            <!-- Кнопки управления -->
+            <StackPanel Grid.Row="1" 
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Center" 
+                        Margin="10">
+                <Button Content="Отмена"
+                        Command="{Binding CancelCommand}"
+                        Margin="5"
+                        MaxWidth="150"/>
+                <Button Content="Сохранить"
+                        Command="{Binding SaveCommand}"
+                        Margin="5"
+                        MaxWidth="150"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>
