@@ -38,8 +38,8 @@ namespace Data_BusinessLogic.UserControl.ViewModels
         public RelayCommand<RepairParts> EditPartCommand { get; private set; }
         public RelayCommand<RepairParts> DeletePartCommand { get; private set; }
         public RelayCommand ClearSearchInputCommand { get; private set; }
-        public event Action AddRepairPartRequested = delegate { };
-        public event Action<RepairParts> EditRepairPartRequested = delegate { };
+        public event Action AddPartRequested = delegate { };
+        public event Action<RepairParts> EditPartRequested = delegate { };
         public PartsListViewModel(IPartsRepository repository)
         {
             _repository = repository;
@@ -70,11 +70,11 @@ namespace Data_BusinessLogic.UserControl.ViewModels
         }
         private void OnAddRepairPart()
         {
-            AddRepairPartRequested.Invoke();
+            AddPartRequested.Invoke();
         }
         private void OnEditRepairPart(RepairParts repairPart)
         {
-            EditRepairPartRequested.Invoke(repairPart);
+            EditPartRequested.Invoke(repairPart);
         }
         private async void OnDeleteRepairPart(RepairParts repairPart)
         {

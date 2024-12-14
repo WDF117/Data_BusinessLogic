@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data_BusinessLogic.UserControl.ViewModels
+namespace Data_BusinessLogic.ViewModels
 {
     public class ValidableRequest : ValidableBindableBase
     {

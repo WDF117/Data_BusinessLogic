@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Data_BusinessLogic"
         xmlns:views="clr-namespace:Data_BusinessLogic.UserControl"
-        xmlns:viewModels="clr-namespace:Data_BusinessLogic.UserControl.ViewModels"
+        xmlns:viewModels="clr-namespace:Data_BusinessLogic.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>

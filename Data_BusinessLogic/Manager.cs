@@ -90,7 +90,8 @@ namespace Data_BusinessLogic
                     CurrentViewModel = _partsListViewModel;
                     break;
                 default:
-                    throw new ArgumentException("Unknown navigation destination", nameof(dest));
+                    CurrentViewModel = _loginViewModel;
+                    break;
             }
         }
         private void NavigateToAddRequest()
@@ -162,16 +163,16 @@ namespace Data_BusinessLogic
         private void NavigateToAddPart()
         {
             _partsAddEdViewModel.IsEditMode = false;
-            _partsAddEdViewModel.SetPart(new Parts());
+            _partsAddEdViewModel.SetRepairPart(new RepairParts());
             CurrentViewModel = _partsAddEdViewModel;
         }
 
-        private void NavigateToEditPart(Parts part)
+        private void NavigateToEditPart(RepairParts part)
         {
             _partsAddEdViewModel.IsEditMode = true;
-            _partsAddEdViewModel.SetPart(part);
+            _partsAddEdViewModel.SetRepairPart(part);
             CurrentViewModel = _partsAddEdViewModel;
         }
     }
 }
-}
+

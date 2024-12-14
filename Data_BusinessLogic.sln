@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35514.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data_BusinessLogic", "Data_BusinessLogic\Data_BusinessLogic.csproj", "{DA9073F0-5413-43B0-BD65-FDD285EACEE3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{8D5EA859-5290-4A63-A402-9C9BDA4D72FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +17,15 @@ Global
 		{DA9073F0-5413-43B0-BD65-FDD285EACEE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA9073F0-5413-43B0-BD65-FDD285EACEE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA9073F0-5413-43B0-BD65-FDD285EACEE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D5EA859-5290-4A63-A402-9C9BDA4D72FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D5EA859-5290-4A63-A402-9C9BDA4D72FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D5EA859-5290-4A63-A402-9C9BDA4D72FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D5EA859-5290-4A63-A402-9C9BDA4D72FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A360C8EE-4BB4-495D-B473-E6F9EEB928A7}
 	EndGlobalSection
 EndGlobal
