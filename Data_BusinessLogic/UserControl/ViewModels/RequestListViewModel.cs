@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Data_BusinessLogic.UserControl.ViewModels
 {
-    internal class RequestListViewModel : BindableBase
+    public class RequestListViewModel : BindableBase
     {
         private readonly IRequestRepository _repository;
 

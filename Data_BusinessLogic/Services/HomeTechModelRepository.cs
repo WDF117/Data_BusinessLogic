@@ -10,7 +10,7 @@ namespace Data_BusinessLogic.Services
     public interface IHomeTechModelRepository
     {
         Task<List<HomeTechModel>> GetAllHomeTechModelsAsync();
-        Task<HomeTechModel> GetHomeTechModelByIDAsync(int modelID);
+        Task<HomeTechModel> GetHomeTechModelByIDAsync(int modelID); 
         Task<HomeTechModel> AddHomeTechModelAsync(HomeTechModel model);
         Task<HomeTechModel> UpdateHomeTechModelAsync(HomeTechModel model);
         Task DeleteHomeTechModelAsync(int modelID);

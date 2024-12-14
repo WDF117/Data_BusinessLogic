@@ -14,10 +14,16 @@ namespace Data_BusinessLogic.Services
         Task<Users> UpdateUsersAsync(Users user);
         Task DeleteUserAsync(int userID);
         Task<Users> AddUserAsync(Users user);
+        Task<Users> GetUserByLoginAndPasswordAsync(string login, string password);
     }
     public class UserRepository : IUserRepository
     {
         private readonly RepairDBEntities _dbcon = RepairDBEntities._context;
+        public async Task<Users> GetUserByLoginAndPasswordAsync(string login, string password)
+        {
+            return await _dbcon.Users
+                .FirstOrDefaultAsync(x => x.Login == login && x.Password == password);
+        }
         public async Task<Users> AddUserAsync(Users user)
         {
             _dbcon.Users.Add(user);

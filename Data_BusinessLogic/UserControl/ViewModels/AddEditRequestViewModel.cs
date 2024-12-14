@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Data_BusinessLogic.UserControl.ViewModels
 {
-    internal class AddEditRequestViewModel : BindableBase
+    public class AddEditRequestViewModel : BindableBase
     {
         private IRequestRepository _repository;
         public AddEditRequestViewModel(IRequestRepository repo)
@@ -35,8 +35,6 @@ namespace Data_BusinessLogic.UserControl.ViewModels
         public RelayCommand SaveCommand { get; private set; }
         public RelayCommand CancelCommand { get; private set; }
         public event Action Done;
-
-        //----------------
 
         private void OnCanExecuteChanges(object sender, EventArgs e)
         {

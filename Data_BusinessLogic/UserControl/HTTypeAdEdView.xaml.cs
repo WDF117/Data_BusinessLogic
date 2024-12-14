@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Data_BusinessLogic.UserControl
 {
     /// <summary>
-    /// Логика взаимодействия для ValueAddEdPage.xaml
+    /// Логика взаимодействия для HTTypeAdEdView.xaml
     /// </summary>
-    public partial class ValueAddEdPage : Page
+    public partial class HTTypeAdEdView : Page
     {
-        public ValueAddEdPage()
+        public HTTypeAdEdView()
         {
             InitializeComponent();
         }

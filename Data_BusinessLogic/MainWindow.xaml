@@ -27,6 +27,12 @@
         <DataTemplate DataType="{x:Type viewModels:HomeTechTypeViewModel}">
             <views:HomeTechTypeView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:HTMAddEdViewModel}">
+            <views:HTModelAdEdView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:HTTAddEdViewModel}">
+            <views:HTTypeAdEdView/>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:LoginViewModel}">
             <views:LoginView/>
         </DataTemplate>
@@ -64,6 +70,9 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.Background>
                 <LinearGradientBrush>
@@ -72,9 +81,24 @@
                     <GradientStop Color="DarkBlue" Offset="0.75"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <Button Content="Пользователи"/>
-            <Button Content="Заявки" Grid.Column="1"/>
-            <Button Content="Запчасти" Grid.Column="2"/>
+            <Button Content="Пользователи" 
+                    Command="{Binding NavigationCommand}"
+                    CommandParameter="users"/>
+            <Button Content="Заявки" Grid.Column="1" 
+                    Command="{Binding NavigationCommand}"
+                    CommandParameter="requests"/>
+            <Button Content="Запчасти" Grid.Column="2" 
+                    Command="{Binding NavigationCommand}"
+                    CommandParameter="parts"/>
+            <Button Content="Модели техники" Grid.Column="3" 
+                    Command="{Binding NavigationCommand}"
+                    CommandParameter="homeTechModels"/>
+            <Button Content="Типы техники" Grid.Column="4" 
+                    Command="{Binding NavigationCommand}"
+                    CommandParameter="homeTechTypes"/>
+            <Button Content="Запчасти" Grid.Column="5" 
+                    Command="{Binding NavigationCommand}"
+                    CommandParameter="parts"/>
         </Grid>
         <Grid x:Name="ContentGrid" Grid.Row="1">
             <ContentControl Content="{Binding CurrentViewModel}"/>

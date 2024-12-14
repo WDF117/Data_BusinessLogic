@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Data_BusinessLogic.UserControl.ViewModels
 {
-    internal class ValidableUser : ValidableBindableBase
+    public class ValidableUser : ValidableBindableBase
     {
         private int _id;
         public int ID { get => _id; set => SetProperty(ref _id, value); }
