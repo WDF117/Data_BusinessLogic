@@ -50,8 +50,8 @@ namespace Data_BusinessLogic
             _userListViewModel.EditUserRequested += NavigateToEditUser;
             _commentViewModel.AddCommentRequested += NavigateToAddComment;
             _commentViewModel.EditCommentRequested += NavigateToEditComment;
-            _homeTechViewModel.AddHomeTechRequested += NavigateToAddHomeTechModel;
-            _homeTechViewModel.EditHomeTechRequested += NavigateToEditHomeTechModel;
+            _homeTechViewModel.AddHomeTechModelRequested += NavigateToAddHomeTechModel;
+            _homeTechViewModel.EditHomeTechModelRequested += NavigateToEditHomeTechModel;
             _homeTechTypeViewModel.AddHomeTechTypeRequested += NavigateToAddHomeTechType;
             _homeTechTypeViewModel.EditHomeTechTypeRequested += NavigateToEditHomeTechType;
             _partsListViewModel.AddPartRequested += NavigateToAddPart;

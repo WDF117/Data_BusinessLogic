@@ -61,18 +61,18 @@
                 <DataGridTextColumn Header="Телефон"
                                     Binding="{Binding Phone}"
                                     Width="*"/>
-                <DataGridTemplateColumn Header="Редактировать">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Content="Редактировать"
+                    <DataGridTemplateColumn Header="Редактировать">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Редактировать"
                                     Command="{Binding DataContext.EditUserCommand,
                                         RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
                                     CommandParameter="{Binding}"
                                     Margin="5"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn
-                <DataGridTemplateColumn Header="Просмотр">
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Просмотр">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="Просмотр"
@@ -86,4 +86,5 @@
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
+        </Grid>
 </Page>

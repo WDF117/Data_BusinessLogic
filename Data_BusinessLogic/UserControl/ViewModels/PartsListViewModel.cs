@@ -35,8 +35,8 @@ namespace Data_BusinessLogic.UserControl.ViewModels
         }
         private List<RepairParts>? _repairPartsList;
         public RelayCommand AddRepairPartCommand { get; private set; }
-        public RelayCommand<RepairParts> EditRepairPartCommand { get; private set; }
-        public RelayCommand<RepairParts> DeleteRepairPartCommand { get; private set; }
+        public RelayCommand<RepairParts> EditPartCommand { get; private set; }
+        public RelayCommand<RepairParts> DeletePartCommand { get; private set; }
         public RelayCommand ClearSearchInputCommand { get; private set; }
         public event Action AddRepairPartRequested = delegate { };
         public event Action<RepairParts> EditRepairPartRequested = delegate { };
@@ -46,8 +46,8 @@ namespace Data_BusinessLogic.UserControl.ViewModels
             RepairParts = new ObservableCollection<RepairParts>();
             LoadRepairParts();
             AddRepairPartCommand = new RelayCommand(OnAddRepairPart);
-            EditRepairPartCommand = new RelayCommand<RepairParts>(OnEditRepairPart);
-            DeleteRepairPartCommand = new RelayCommand<RepairParts>(OnDeleteRepairPart);
+            EditPartCommand = new RelayCommand<RepairParts>(OnEditRepairPart);
+            DeletePartCommand = new RelayCommand<RepairParts>(OnDeleteRepairPart);
             ClearSearchInputCommand = new RelayCommand(OnClearSearch);
         }
         public async void LoadRepairParts()
