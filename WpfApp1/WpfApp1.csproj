@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="SQLQuery\PZ_17 DB.sql" />
+    <Content Include="SQLQuery\PZ_17 DB_see.sql" />
+    <Content Include="SQLQuery\PZ_17DB-Values.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -19,6 +25,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Unity" Version="5.11.10" />
   </ItemGroup>
 
 </Project>
